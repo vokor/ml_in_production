@@ -1,0 +1,7 @@
+*.pkl
+*.json
+*.debug
+*.warn
+.venv
+.idea/
+__pycache__
