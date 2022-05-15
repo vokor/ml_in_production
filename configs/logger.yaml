@@ -1,0 +1,29 @@
+version: 1
+formatters:
+  simple:
+    class: logging.Formatter
+    format: "%(asctime)s %(name)s %(levelname)s %(message)s"
+handlers:
+  file_handler_debug:
+    class: logging.FileHandler
+    filename: ml_classifier.debug
+    level: DEBUG
+    formatter: simple
+  file_handler_warn:
+    class: logging.FileHandler
+    filename: ml_classifier.warn
+    level: WARN
+    formatter: simple
+  stream_handler:
+    class: logging.StreamHandler
+    stream: ext://sys.stderr
+    level: INFO
+    formatter: simple
+loggers:
+  ml_classifier:
+    level: DEBUG
+    handlers: [file_handler_debug, file_handler_warn]
+    propagate: yes
+root:
+  level: DEBUG
+  handlers: [stream_handler]

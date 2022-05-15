@@ -1,0 +1,6 @@
+*.pkl
+*.json
+*.debug
+*.warn
+.venv
+.idea/
